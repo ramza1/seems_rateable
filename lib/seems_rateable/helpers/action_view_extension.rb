@@ -7,7 +7,7 @@ module SeemsRateable
             " object, try adding 'seems_rateable' into your object's model"
         end
 
-        if !current_rater || rateable.rated_by?(current_rater, options[:dimension])
+        if !current_rater == rateable.user || rateable.rated_by?(current_rater, options[:dimension])
           options[:disabled] = true
         end
 
